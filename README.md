@@ -1,5 +1,6 @@
 
-# Project 4
+# Peter best Sellers
+## Project 4
 # Use tools learned and skills gained through the past modules to work as a team.
 
 ## Team
@@ -27,7 +28,7 @@
 
 
 ## Step 1: Setting Up
-### Conceptualization
+### Conceptualized
 * Discussed logical next steps to extend our previous research.
 * Discussed where machine learning and big data manipulation would work best.
 ### Scoped out data to support a plan
@@ -36,8 +37,12 @@
 * Set up DataBricks Workspace
 * Set up GitHub Repository
 
+## Step 2: Gathering, Cleaning, and Processing Data
+### Sourced Data
+* Open Library
+* Previous NYT Bestseller List Data
 
-## Gathered and Integrated Data
+### Cleaned and Processed Data
 * Pulled LOTS of data from Open Library to flesh out the NYT Bestsellers data already acquired.
 * Removed columns that were unnecessary.
 * Filtered dataset down to books published after 2008 and printed in English.
@@ -45,7 +50,7 @@
 
 
 
-
+## Step ___: Presenting
 ## Created Powerpoint of presentation
 * Created in Microsoft Powerpoint
 * Shared with team and edited in Google Slides.
