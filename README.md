@@ -24,7 +24,7 @@
 
 * Presentation in Google Slides: []()
 
-
+# Project Overview
 
 
 ## Step 1: Setting Up
@@ -38,7 +38,7 @@
 * Set up GitHub Repository
 
 ## Step 2: Gathering, Cleaning, and Processing Data
-### Sourced Data
+###  Data Sources
 * Open Library
 * Previous NYT Bestseller List Data
 
@@ -47,10 +47,20 @@
 * Removed columns that were unnecessary.
 * Filtered dataset down to books published after 2008 and printed in English.
 
+### Databricks: Brief explanation of the use of Databricks in the project, its role in handling big data(DBFS), distributed data preprocessing/collaboration. List of Spark components and libraries used; SparkSQL, Spark Parquet.
 
+
+### Jupyter Notebook: Role of Jupyter Notebook in the project; contribution to initial data exploration, data cleaning, and prototyping machine learning models. List of key Python libraries used:
+
+## Step 3: Data Model Implementation and Optimizations
+### Machine Learning Model
+
+## Analysis of ML performance/ predictive power
 
 
 ## Step ___: Presenting
+## Data Analysis and Vizualizations
+*
 ## Created Powerpoint of presentation
 * Created in Microsoft Powerpoint
 * Shared with team and edited in Google Slides.
