@@ -58,7 +58,7 @@
   3) Ran big data (27 mill rows) in a range from seconds - 10 minutes.
 * Adapted some libraries; does not work well with sklearn so had to switch to pyspark
 * Libraries imported:
-
+![image](https://github.com/StephWolter/PeterbestSellers/blob/main/Images/databricksImports.png?raw=true)
 
 ### Jupyter Notebook: Role of Jupyter Notebook in the project; contribution to initial data exploration, data cleaning, and prototyping machine learning models. List of key Python libraries used:
 
