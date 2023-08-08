@@ -47,8 +47,27 @@
 * Removed columns that were unnecessary.
 * Filtered dataset down to books published after 2008 and printed in English.
 
-### Databricks: Brief explanation of the use of Databricks in the project, its role in handling big data(DBFS), distributed data preprocessing/collaboration. List of Spark components and libraries used; SparkSQL, Spark Parquet.
-
+### Databricks    
+* Used DataBricks as a group to collaborate on processing Open Library big data
+        * Became unmanageable for teamwork, perhaps due to the set up
+        * Team had to fight for resources, running script took long times
+        * Issues sharing files and tables.
+* Used DataBricks individually to process and run models
+        * Used Jupyter-notebook to create parquet files
+        * Was able to seamlessly integrate csv, parquet, and text files.
+        * Ran big data (27 mill rows) in a range from seconds - 10 minutes.
+* Adapted some libraries; does not work well with sklearn so had to switch to pyspark
+* Libraries imported:
+        * from pyspark.sql.functions import col, when, split, length, substring, expr, regexp_extract, upper, size, lower
+        * from sklearn.model_selection import train_test_split
+        * import pandas as pd
+        * from sklearn.metrics import accuracy_score
+        * from pyspark.sql import SparkSession
+        * from pyspark.ml.feature import VectorAssembler, StringIndexer, OneHotEncoder
+        * from pyspark.ml.classification import LogisticRegression
+        * from pyspark.ml.evaluation import BinaryClassificationEvaluator, MulticlassClassificationEvaluator
+        * from pyspark.ml import Pipeline
+        * from pyspark.ml.classification import LogisticRegression
 
 ### Jupyter Notebook: Role of Jupyter Notebook in the project; contribution to initial data exploration, data cleaning, and prototyping machine learning models. List of key Python libraries used:
 
