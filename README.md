@@ -34,7 +34,7 @@
 ### Scoped out data to support a plan
 * Found fields provided by OpenLibrary API
 ### Collaboration SetUp
-* Set up DataBricks Workspace
+* Set up DataBricks Workspace and linked AWS account for collaborative workspace
 * Set up GitHub Repository
 
 ## Step 2: Gathering, Cleaning, and Processing Data
@@ -43,25 +43,34 @@
 * Previous NYT Bestseller List Data
 
 ### Cleaned and Processed Data
-* Pulled LOTS of data from Open Library to flesh out the NYT Bestsellers data already acquired.
-* Removed columns that were unnecessary.
-* Filtered dataset down to books published after 2008 and printed in English.
+** Pulled large volumes of data from Open Library to expand and complement historical book data previously acquired from the NYT Bestsellers data .
+* Removed columns that were not needed in our analysis.
+* Filtered dataset down to books published and printed in English .
 
-### Databricks    
-* Used DataBricks as a group to collaborate on processing Open Library big data
-  1) Became unmanageable for teamwork, perhaps due to the set up
-  2) Team had to fight for resources, running script took long times
-  3) Issues sharing files and tables.
-* Used DataBricks individually to process and run models
-  1) Used Jupyter-notebook to create parquet files
-  2) Was able to seamlessly integrate csv, parquet, and text files.
-  3) Ran big data (27 mill rows) in a range from seconds - 10 minutes.
+### Interfaces and libraries used:
+
+* Databricks
+       * Used DataBricks as a group to collaborate on processing Open Library big data
+       *        * Databricks played a big role in its ability to import and handle big data, which we experienced through the Databricks File System (DBFS).
+         1) Initially distributed data during preprocessing in order to do synchronous collaboration, however, after several GBs worth of files imported, we found it difficult to work there together as commands took significant amounts of time to load.
+                * Team had to fight for resources, running script took long times
+         3) Issues sharing files and tables.
+       
+       * Used DataBricks individually to process and run models
+         1) Used Jupyter-notebook to create parquet files
+         2) Was able to seamlessly integrate csv, parquet, and text files.
+         3) Ran big data (27 mill rows) in a range from seconds - 10 minutes.
+* List of Spark components and libraries used; SparkSQL, Spark Parquet.
 * Adapted some libraries; does not work well with sklearn so had to switch to pyspark
 * Libraries imported:
 ![image](https://github.com/StephWolter/PeterbestSellers/blob/main/Images/databricksImports.png?raw=true)
 
-### Jupyter Notebook: Role of Jupyter Notebook in the project; contribution to initial data exploration, data cleaning, and prototyping machine learning models. List of key Python libraries used:
+* Jupyter Notebook and Google Colab allowed for the performance of data preprocessing tasks including the handling of missing/null values, dropping and creating columns, transforming variables, visualizing data, and encoding categorical features. Most importantly, they allowed for the creation and export of dataframes in various file types, such as parquet, csv, and JSON which we imported and further manipulated in our collaborative Databricks workspace.
 
+* Databricks, Colab as well as Jupyter Notebook were also used to evaluate the performance of our various trained models using various metrics like accuracy, precision, recall, F1-score, and AUC.
+* PySpark was used extensively for big data loading and exploration.
+*        Led to easy manipulation and of the large datasets we were dealing with.
+  
 ## Step 3: Data Model Implementation and Optimizations
 ### Machine Learning Model - Predicting Fiction vs. Nonfiction
 We created a text classification model that takes the titles and descriptions of NYT bestsellers and predicts whether the book is fiction or nonfiction. 
