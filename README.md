@@ -94,6 +94,29 @@ Our second iteration of the model takes advantage of word embedding, which creat
 
 
 
+### High-Rated Books in NYT Data
+
+Downloading and Clearing Codes from Open Library Dump
+1) Obtain the Open Library dump containing the codes you need.
+2) Open the file using a text editor or spreadsheet software.
+3) Remove unnecessary data and columns not needed for analysis.
+4) Clean up the data, handle missing values, correct errors, and format inconsistencies.
+5) Save the cleaned data.
+
+Joining Works Data and Ratings Data
+1) Download Works Data and Ratings Data from Open Library or other sources.
+2) Import the data into your data analysis tool or programming environment.
+3) Merge the Works Data and Ratings Data based on "work_key" to create a combined dataset.
+4) Keep only "title" and "ratings" columns, removing unnecessary ones.
+5) Filter the data to retain ratings of 4s and 5s, removing other ratings.
+6) Save the filtered data.
+
+Counting High-Rated Books
+1) Upload CSV files to Google Colab or your environment.
+2) Use pandas to read and merge the CSV files based on "title".
+3) Filter the merged data to retain only books with high ratings (4s and 5s).
+4) Count the number of high-rated books in the NYT data.
+
 ## Analysis of ML performance/ predictive power
 
 
