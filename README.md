@@ -99,9 +99,17 @@ Our first iteration of the model consists of three layers:
 2) A hidden Dense layer with relu activation and 32 neurons.
 3) An output Dense layer with sigmoid activation.
 
-Our second iteration of the model takes advantage of word embedding, which creates vector representations of the title_descriptions. 
+Our second iteration of the model takes advantage of word embedding, which creates vector representations of the title_descriptions. The second model's layers are:
+1) An initial embedding layer.
+2) A dropout layer that randomly sets 0.2 of the input units to 0 during training. This mitigates overfitting.
+3) A pooling layer that reduces the 2D vector output of the prior layers to 1D vector output.
+4) A hidden Dense layer with relu activation and 32 neurons.
+5) An output Dense layer with sigmoid activation.
 
+The 2nd model performs better than the 1st model, as shown below. This demonstrates the benefits of embedding layers.
 
+![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/aa0a0186-20fe-440b-9392-98423dd9017f)
+![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/bf0e28e4-ad52-4def-97c0-e973e2b717d6)
 
 ### High-Rated Books in NYT Data
 
