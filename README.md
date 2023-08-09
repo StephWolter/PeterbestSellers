@@ -168,6 +168,36 @@ Learning Model:
 ### Fiction vs. Nonfiction Text Classifier
 The basic text classifier with an embedding layer performs relatively well at predictions, with accuracy of 88% and AUC of 94% on the test dataset. 
 
+We also defined a function, make_a_prediction() that takes raw text, tokenizes it, and passes it to the embeding model for prediction. 
+"""
+def tokenize_text(sequences):
+  for sequence in sequences:
+    for dtext in sequence:
+      dtext = dtext.replace('[^\w\s]','')
+
+  tokenizer = Tokenizer()
+  tokenizer.fit_on_texts(sequences)
+  X_text = tokenizer.texts_to_sequences(sequences)
+
+  max_sequence_length = 350
+  desc_text_padded = pad_sequences(X_text, maxlen=max_sequence_length, padding='post')
+  return desc_text_padded
+
+def make_a_prediction():
+  cont = 'y'
+  while cont=='y':
+    user_input = input('Book title & description: ')
+    X = tokenize_text([user_input])
+    print(model2.predict(X))
+    cont = input('Continue? (y/n)')
+"""
+
+The model accurately classified two made-up books. The first was a hypothetical cookbook (i.e., nonfiction) and the second was a hypothetical fantasy novel (i.e., fiction).
+![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/75afd6f3-b7a0-401b-b8ba-0a8896552bb0)
+
+However, the model misclassified several real nonfiction books. This type of misclassification could be rectified in the future with more sophisticated embedding layers (e.g., Tensor Flow's word2vec) and/or more rigorous data preprocessing (e.g., ensuring there are no errors in the is_fiction field from the training dataset).
+![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/8a1954c0-74c6-402f-9e2e-1e0fd00946e7)
+
 ## Step 4: Presenting
 ## Data Analysis and Vizualizations
 ## Created Powerpoint of presentation
