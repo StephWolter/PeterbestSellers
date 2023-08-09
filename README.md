@@ -108,8 +108,8 @@ Our second iteration of the model takes advantage of word embedding, which creat
 
 The 2nd model performs better than the 1st model, as shown below. This demonstrates the benefits of embedding layers.
 
-![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/aa0a0186-20fe-440b-9392-98423dd9017f)
-![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/bf0e28e4-ad52-4def-97c0-e973e2b717d6)
+![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/2bf59ae5-1ada-4955-bc1b-9a1b85a39432)
+![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/d5ac2c95-4490-4b57-a527-c06e7b59b68a)
 
 ### High-Rated Books in NYT Data
 
