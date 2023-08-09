@@ -165,6 +165,8 @@ Learning Model:
 
 ## Analysis of ML performance/ predictive power
 
+### Fiction vs. Nonfiction Text Classifier
+The basic text classifier with an embedding layer performs relatively well at predictions, with accuracy of 88% and AUC of 94% on the test dataset. 
 
 ## Step 4: Presenting
 ## Data Analysis and Vizualizations
