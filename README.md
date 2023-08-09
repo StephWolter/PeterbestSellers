@@ -169,7 +169,7 @@ Learning Model:
 The basic text classifier with an embedding layer performs relatively well at predictions, with accuracy of 88% and AUC of 94% on the test dataset. 
 
 We also defined a function, make_a_prediction() that takes raw text, tokenizes it, and passes it to the embeding model for prediction. 
-'''
+```
 def tokenize_text(sequences):
   for sequence in sequences:
     for dtext in sequence:
@@ -190,7 +190,7 @@ def make_a_prediction():
     X = tokenize_text([user_input])
     print(model2.predict(X))
     cont = input('Continue? (y/n)')
-'''
+```
 
 The model accurately classified two made-up books. The first was a hypothetical cookbook (i.e., nonfiction) and the second was a hypothetical fantasy novel (i.e., fiction).
 ![image](https://github.com/StephWolter/PeterbestSellers/assets/124944383/75afd6f3-b7a0-401b-b8ba-0a8896552bb0)
