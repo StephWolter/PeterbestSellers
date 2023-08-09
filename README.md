@@ -50,13 +50,12 @@
 ### Interfaces and libraries used:
 
 * Databricks
-       * Used DataBricks as a group to collaborate on processing Open Library big data
-       *        * Databricks played a big role in its ability to import and handle big data, which we experienced through the Databricks File System (DBFS).
-         1) Initially distributed data during preprocessing in order to do synchronous collaboration, however, after several GBs worth of files imported, we found it difficult to work there together as commands took significant amounts of time to load.
-                * Team had to fight for resources, running script took long times
-         3) Issues sharing files and tables.
-       
-       * Used DataBricks individually to process and run models
+* Used DataBricks as a group to collaborate on processing Open Library big data
+* Databricks played a big role in its ability to import and handle big data, which we experienced through the Databricks File System (DBFS).
+* Initially distributed data during preprocessing in order to do synchronous collaboration, however, after several GBs worth of files imported, we found it difficult to work there together as commands took significant amounts of time to load.
+* Team had to fight for resources, running script took long times
+* Issues sharing files and tables.
+* Used DataBricks individually to process and run models
          1) Used Jupyter-notebook to create parquet files
          2) Was able to seamlessly integrate csv, parquet, and text files.
          3) Ran big data (27 mill rows) in a range from seconds - 10 minutes.
@@ -69,7 +68,7 @@
 
 * Databricks, Colab as well as Jupyter Notebook were also used to evaluate the performance of our various trained models using various metrics like accuracy, precision, recall, F1-score, and AUC.
 * PySpark was used extensively for big data loading and exploration.
-*        Led to easy manipulation and of the large datasets we were dealing with.
+* Led to easy manipulation and of the large datasets we were dealing with.
   
 ## Step 3: Data Model Implementation and Optimizations
 ### Machine Learning Model - Predicting Fiction vs. Nonfiction
@@ -134,12 +133,41 @@ Counting High-Rated Books
 3) Filter the merged data to retain only books with high ratings (4s and 5s).
 4) Count the number of high-rated books in the NYT data.
 
+### Machine Learning Model - Predicting NYT Bestseller by Author
+
+We created a fairly inept model attempting to predict whether a book will make the NYT bestseller list given the author's status as a NYT Bestselling author. 
+
+To create a usable dataframe:
+In Jupyter notebook:
+1) Read in works Open Library data dump and read into parquet
+2) Imported NYT csv information
+3) Break out json data from the OL data.
+4) Pull only fields needed.
+
+In DataBricks, preprocessing data:
+1) Read in limited data
+2) Create an author dataframe tying the OL author_keys with the NYT author data.  
+3) Created a field for the author's last initial and one with binary cells of 1 (on a list) or 0 (not on a list)
+4) Removed any null last initials or numeric last initials (together they represented 17% which I deemed reasonable to cut)
+![image](https://github.com/StephWolter/PeterbestSellers/blob/main/Images/numeric_null_author_initials.png?raw=true)
+5) Did some calculations and visualizations regarding author's stats
+![image](https://github.com/StephWolter/PeterbestSellers/blob/main/Images/initial_authors.png?raw=true)
+6) Joined to other books data, added length of title.
+7) Saved as a databricks table. (note: couldn't manage to download the table)
+
+Learning Model:
+1) Faced challenges reading in and using as features the other columns
+2) Worked and trained the model based off whether author was a best seller.
+![image](https://github.com/StephWolter/PeterbestSellers/blob/main/Images/confusion_initials.png?raw=true)
+3) Though accuracy score looked promising, that is only because of the nature of the data.
+![image](https://github.com/StephWolter/PeterbestSellers/blob/main/Images/total_on_total_not.png?raw=true)
+4) Since the majority of the data is in one class, the conclusion is that if you ALWAYS guess not on the nyt bestselling list, you're probably right.
+
 ## Analysis of ML performance/ predictive power
 
 
-## Step ___: Presenting
+## Step 4: Presenting
 ## Data Analysis and Vizualizations
-*
 ## Created Powerpoint of presentation
 * Created in Microsoft Powerpoint
 * Shared with team and edited in Google Slides.
